@@ -20,9 +20,13 @@ sequelize.sync().then(()=>console.log('tables synced successfully - 2'.green))
 .catch(err=>console.log(err))
 
 app.get('/', (req, res)=>{
-    res.sendFile('./signUp/index.html', { root: __dirname });
+    res.sendFile('signUp/index.html', { root: __dirname });
 });
 
+
+app.get('/login',(req,res)=>{
+    res.sendFile('login/loginPage.html',{root:__dirname});
+})
 
 app.use('/user',router);
 

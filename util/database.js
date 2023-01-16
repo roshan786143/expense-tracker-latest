@@ -6,4 +6,8 @@ const sequelize = new Sequelize('expense','root','98127634$Sql',{
     hostname : 'localhost'
 })
 
+
+sequelize.authenticate().then(()=>console.log('database connection established successfully - 1.'.blue))
+.catch(err=>console.log(err))
+
 module.exports = sequelize;

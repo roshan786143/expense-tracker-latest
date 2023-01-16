@@ -22,10 +22,13 @@ const userLoginDetails = sequelize.define('userLoginDetails',{
         allowNull : false
     },
     password : {
-        type : Sequelize.INTEGER,
+        type : Sequelize.STRING(100),
         allowNull : false,
     }
 
 })
+
+sequelize.sync().then(()=>console.log('tables synced successfully - 2'.green))
+.catch(err=>console.log(err))
 
 module.exports = userLoginDetails;
